@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block detail_view %}
+
+{% for post in posts %}
+    <div style='border: solid red 1px;'>
+    <div>{{post.title}}</div>
+    {{post.text}}
+    <div>
+        <a href={% url 'detail_view' post.pk %}>post</a>
+        <a href={% url 'edit_post' post.pk %}>edit</a>
+        <a href={% url 'del_post' post.pk %}>delete</a>
+        {% comment %} <a href={% url 'del_post' post.pk %}>delete</a> {% endcomment %}
+    </div>
+    </div>
+    
+{% endfor %}
+{% endblock detail_view %}

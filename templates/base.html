@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+</head>
+<body>
+    <div>
+        {% if user.is_authenticated %}
+        <h1 style='color:black;'>{{user.username}}</h1>
+        {% endif %}
+        
+        <h1>django</h1>
+        <h3><a href="{% url 'create_post' %}">create post</a></h1>
+        <h3><a href="{% url 'posts_view' %}">home</a></h1>
+        {% comment %} <h1><a href="">aa</a></h1> {% endcomment %}
+    </div>
+    {% block detail_view %}
+
+    
+    {% endblock detail_view %}
+</body>
+</html>

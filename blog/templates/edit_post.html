@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block detail_view %}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">sub</button>
+</form>
+
+{% endblock detail_view %}
